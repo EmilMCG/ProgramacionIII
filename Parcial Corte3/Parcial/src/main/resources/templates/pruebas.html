@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title th:text="${title}">Pruebas</title>
+  </head>
+  <body>
+    <h1 th:text="${title}">Pruebas</h1>
+    <div th:if="${error}">
+      <p><strong>Error:</strong> <span th:text="${error}"></span></p>
+    </div>
+    <div>
+      <h2>Items</h2>
+      <ul>
+        <li th:each="it : ${items}">
+          <span th:text="${it.name} ?: ${it['name']}"></span> - 
+          <span th:text="${it.description} ?: ${it['description']}"></span>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
